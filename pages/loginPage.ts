@@ -7,9 +7,11 @@ export class LoginPage {
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
     readonly errorMessage: Locator;
+    loginForm: Locator;
 
     constructor(page: Page) {
         this.page = page;
+        this.loginForm = page.locator('.RaLogin-card');
         this.usernameInput = page.getByRole('textbox', { name: 'Username' });
         this.passwordInput = page.getByRole('textbox', { name: 'Password' });
         this.loginButton = page.getByRole('button', { name: 'Sign in' });
